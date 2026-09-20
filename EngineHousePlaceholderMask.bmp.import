@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://ccyg0fflce2e6"
+path="res://.godot/imported/EngineHousePlaceholderMask.bmp-4edd3a1a497be926449d16dd9ea58104.res"
+
+[deps]
+
+source_file="res://EngineHousePlaceholderMask.bmp"
+dest_files=["res://.godot/imported/EngineHousePlaceholderMask.bmp-4edd3a1a497be926449d16dd9ea58104.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

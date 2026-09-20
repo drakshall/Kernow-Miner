@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://hn1bqn1lnii2"
+path="res://.godot/imported/WinchPlaceholderMask.bmp-740f3d0c42a4efc6ac23058894b6fd23.res"
+
+[deps]
+
+source_file="res://WinchPlaceholderMask.bmp"
+dest_files=["res://.godot/imported/WinchPlaceholderMask.bmp-740f3d0c42a4efc6ac23058894b6fd23.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

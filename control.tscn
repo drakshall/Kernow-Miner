@@ -1,0 +1,138 @@
+[gd_scene format=3 uid="uid://cwqde3g4ocikg"]
+
+[ext_resource type="Texture2D" uid="uid://qw0a1yvbqyid" path="res://BackgroundPlaceholder.png" id="1_ee4bf"]
+[ext_resource type="Texture2D" uid="uid://bbo8mwasowq8t" path="res://WinchPlaceholder.png" id="2_kbped"]
+[ext_resource type="Texture2D" uid="uid://cvs3oijpk8uo1" path="res://WinchPlaceholderHover.png" id="3_0ytqx"]
+[ext_resource type="Texture2D" uid="uid://jrsrt3q57whk" path="res://MineOfficePlaceholder.png" id="3_fj5cn"]
+[ext_resource type="Texture2D" uid="uid://c1rcyp80as3n2" path="res://EngineHousePlaceholder.png" id="4_iy58a"]
+[ext_resource type="BitMap" uid="uid://hn1bqn1lnii2" path="res://WinchPlaceholderMask.bmp" id="4_pxugv"]
+[ext_resource type="Texture2D" uid="uid://dtcuxvlm6tqke" path="res://EngineHousePlaceholderHover.png" id="5_kbped"]
+[ext_resource type="Texture2D" uid="uid://dt8w8pcdo6143" path="res://MineOfficePlaceholderHover.png" id="6_eh0v1"]
+[ext_resource type="BitMap" uid="uid://ccyg0fflce2e6" path="res://EngineHousePlaceholderMask.bmp" id="6_fj5cn"]
+[ext_resource type="BitMap" uid="uid://c6ue14jvj2l07" path="res://MineOfficePlaceholderMask.bmp" id="7_am1vj"]
+[ext_resource type="Texture2D" uid="uid://da5udqcro76hm" path="res://PlaceholderArrow.png" id="11_am1vj"]
+[ext_resource type="Texture2D" uid="uid://mjubefq6t3qf" path="res://PlaceholderArrowHover.png" id="12_g31lc"]
+[ext_resource type="BitMap" uid="uid://5jyfvh780l03" path="res://PlaceholderArrowMask.bmp" id="13_knq72"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_g31lc"]
+
+[node name="Control" type="Control" unique_id=1785656359]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1357707454]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ee4bf")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Button" type="Button" parent="TextureRect" unique_id=577057494 groups=["RichButtonGroup"]]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+toggle_mode = true
+action_mode = 0
+button_group = SubResource("ButtonGroup_g31lc")
+
+[node name="TextureButtonWinch" type="TextureButton" parent="TextureRect" unique_id=889253730 groups=["RichButtonGroup"]]
+propagate_maximum_size = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.39600003
+anchor_top = 0.47500002
+anchor_right = 0.39600003
+anchor_bottom = 0.47500002
+offset_left = -150.32007
+offset_top = -100.0
+offset_right = -0.32006836
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+toggle_mode = true
+action_mode = 0
+button_group = SubResource("ButtonGroup_g31lc")
+texture_normal = ExtResource("2_kbped")
+texture_hover = ExtResource("3_0ytqx")
+texture_click_mask = ExtResource("4_pxugv")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="TextureButtonMineOffice" type="TextureButton" parent="TextureRect" unique_id=521034872 groups=["RichButtonGroup"]]
+propagate_maximum_size = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.53400004
+anchor_top = 0.503
+anchor_right = 0.53400004
+anchor_bottom = 0.505
+offset_left = -154.28003
+offset_top = -80.24005
+offset_right = -4.2800293
+offset_bottom = -2.4000244
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+toggle_mode = true
+action_mode = 0
+button_group = SubResource("ButtonGroup_g31lc")
+texture_normal = ExtResource("3_fj5cn")
+texture_hover = ExtResource("6_eh0v1")
+texture_click_mask = ExtResource("7_am1vj")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="TextureButtonEngineHouse" type="TextureButton" parent="TextureRect" unique_id=1006049615 groups=["RichButtonGroup"]]
+propagate_maximum_size = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.674
+anchor_top = 0.39400002
+anchor_right = 0.674
+anchor_bottom = 0.39400002
+offset_left = -115.08008
+offset_top = -180.52002
+offset_right = -15.080078
+offset_bottom = -0.52001953
+scale = Vector2(2, 2)
+toggle_mode = true
+action_mode = 0
+button_group = SubResource("ButtonGroup_g31lc")
+texture_normal = ExtResource("4_iy58a")
+texture_hover = ExtResource("5_kbped")
+texture_click_mask = ExtResource("6_fj5cn")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="TextureButtonPlaceholderArrow" type="TextureButton" parent="TextureRect" unique_id=2136950342]
+propagate_maximum_size = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.537
+anchor_top = 0.896
+anchor_right = 0.537
+anchor_bottom = 0.896
+offset_left = -49.04004
+offset_top = -49.680054
+offset_right = 0.95996094
+offset_bottom = 0.3199463
+scale = Vector2(2, 2)
+action_mode = 0
+texture_normal = ExtResource("11_am1vj")
+texture_hover = ExtResource("12_g31lc")
+texture_click_mask = ExtResource("13_knq72")
+ignore_texture_size = true
+stretch_mode = 5
+flip_v = true
