@@ -11,8 +11,11 @@
 [ext_resource type="BitMap" uid="uid://ccyg0fflce2e6" path="res://EngineHousePlaceholderMask.bmp" id="6_fj5cn"]
 [ext_resource type="BitMap" uid="uid://c6ue14jvj2l07" path="res://MineOfficePlaceholderMask.bmp" id="7_am1vj"]
 [ext_resource type="Texture2D" uid="uid://da5udqcro76hm" path="res://PlaceholderArrow.png" id="11_am1vj"]
+[ext_resource type="Texture2D" uid="uid://bsewqiprp6gc3" path="res://OreProcessingPlaceholder.png" id="11_xvdhi"]
 [ext_resource type="Texture2D" uid="uid://mjubefq6t3qf" path="res://PlaceholderArrowHover.png" id="12_g31lc"]
+[ext_resource type="Texture2D" uid="uid://pls1fq7v1tq6" path="res://OreProcessingPlaceholderHover.png" id="12_oq4si"]
 [ext_resource type="BitMap" uid="uid://5jyfvh780l03" path="res://PlaceholderArrowMask.bmp" id="13_knq72"]
+[ext_resource type="BitMap" uid="uid://uv3w5fhqe1eu" path="res://OreProcessingPlaceholderMask.bmp" id="13_m4egf"]
 
 [sub_resource type="ButtonGroup" id="ButtonGroup_g31lc"]
 
@@ -35,12 +38,16 @@ texture = ExtResource("1_ee4bf")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Button" type="Button" parent="TextureRect" unique_id=577057494 groups=["RichButtonGroup"]]
+[node name="BackgroundButton" type="Button" parent="TextureRect" unique_id=577057494 groups=["RichButtonGroup"]]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -21.0
+offset_top = 17.0
+offset_right = -21.0
+offset_bottom = 17.0
 grow_horizontal = 2
 grow_vertical = 2
 toggle_mode = true
@@ -74,14 +81,14 @@ stretch_mode = 5
 propagate_maximum_size = true
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.53400004
-anchor_top = 0.503
-anchor_right = 0.53400004
-anchor_bottom = 0.505
-offset_left = -154.28003
-offset_top = -80.24005
-offset_right = -4.2800293
-offset_bottom = -2.4000244
+anchor_left = 0.554
+anchor_top = 0.51900005
+anchor_right = 0.554
+anchor_bottom = 0.51900005
+offset_left = -150.68005
+offset_top = -79.52008
+offset_right = -0.6800537
+offset_bottom = 0.47991943
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(2, 2)
@@ -116,6 +123,28 @@ texture_click_mask = ExtResource("6_fj5cn")
 ignore_texture_size = true
 stretch_mode = 5
 
+[node name="TextureButtonOreProcessing" type="TextureButton" parent="TextureRect" unique_id=1737286919 groups=["RichButtonGroup"]]
+propagate_maximum_size = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.52500004
+anchor_top = 0.43400002
+anchor_right = 0.52500004
+anchor_bottom = 0.43400002
+offset_left = -150.00006
+offset_top = -36.72003
+offset_right = -50.00006
+offset_bottom = -12.120026
+scale = Vector2(3, 3)
+toggle_mode = true
+action_mode = 0
+button_group = SubResource("ButtonGroup_g31lc")
+texture_normal = ExtResource("11_xvdhi")
+texture_hover = ExtResource("12_oq4si")
+texture_click_mask = ExtResource("13_m4egf")
+ignore_texture_size = true
+stretch_mode = 5
+
 [node name="TextureButtonPlaceholderArrow" type="TextureButton" parent="TextureRect" unique_id=2136950342]
 propagate_maximum_size = true
 layout_mode = 1
@@ -136,3 +165,15 @@ texture_click_mask = ExtResource("13_knq72")
 ignore_texture_size = true
 stretch_mode = 5
 flip_v = true
+
+[node name="Control" type="Control" parent="." unique_id=2146615849]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PanelContainerWinch" type="PanelContainer" parent="Control" unique_id=856528978]
+layout_mode = 0
+offset_left = 951.0
+offset_top = 727.0
+offset_right = 991.0
+offset_bottom = 767.0

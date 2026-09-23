@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://uv3w5fhqe1eu"
+path="res://.godot/imported/OreProcessingPlaceholderMask.bmp-1b35276ce1d11829ad3b933760505cdc.res"
+
+[deps]
+
+source_file="res://OreProcessingPlaceholderMask.bmp"
+dest_files=["res://.godot/imported/OreProcessingPlaceholderMask.bmp-1b35276ce1d11829ad3b933760505cdc.res"]
+
+[params]
+
+create_from=0
+threshold=0.5
