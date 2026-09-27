@@ -1,0 +1,205 @@
+[gd_scene format=3 uid="uid://w8jh2jw7823r"]
+
+[ext_resource type="Texture2D" uid="uid://qw0a1yvbqyid" path="res://Textures/BackgroundPlaceholder.png" id="1_ygm5j"]
+[ext_resource type="Script" uid="uid://cwcltof31jpp6" path="res://Scenes/BackgroundTextRect.gd" id="2_2fnit"]
+[ext_resource type="Texture2D" uid="uid://bbo8mwasowq8t" path="res://Textures/WinchPlaceholder.png" id="2_45s7x"]
+[ext_resource type="Texture2D" uid="uid://cvs3oijpk8uo1" path="res://Textures/WinchPlaceholderHover.png" id="3_2fnit"]
+[ext_resource type="BitMap" uid="uid://hn1bqn1lnii2" path="res://Textures/WinchPlaceholderMask.bmp" id="4_y0gl6"]
+[ext_resource type="Texture2D" uid="uid://jrsrt3q57whk" path="res://Textures/MineOfficePlaceholder.png" id="5_7r3ve"]
+[ext_resource type="Texture2D" uid="uid://dt8w8pcdo6143" path="res://Textures/MineOfficePlaceholderHover.png" id="6_ijbwh"]
+[ext_resource type="BitMap" uid="uid://c6ue14jvj2l07" path="res://Textures/MineOfficePlaceholderMask.bmp" id="7_ga25u"]
+[ext_resource type="Texture2D" uid="uid://c1rcyp80as3n2" path="res://Textures/EngineHousePlaceholder.png" id="8_k6kbj"]
+[ext_resource type="Texture2D" uid="uid://dtcuxvlm6tqke" path="res://Textures/EngineHousePlaceholderHover.png" id="9_4cixc"]
+[ext_resource type="BitMap" uid="uid://ccyg0fflce2e6" path="res://Textures/EngineHousePlaceholderMask.bmp" id="10_c2gus"]
+[ext_resource type="Texture2D" uid="uid://bsewqiprp6gc3" path="res://Textures/OreProcessingPlaceholder.png" id="11_bfsmu"]
+[ext_resource type="Texture2D" uid="uid://pls1fq7v1tq6" path="res://Textures/OreProcessingPlaceholderHover.png" id="12_ekymg"]
+[ext_resource type="BitMap" uid="uid://uv3w5fhqe1eu" path="res://Textures/OreProcessingPlaceholderMask.bmp" id="13_xholb"]
+[ext_resource type="Script" uid="uid://5t3ksd6qj75" path="res://Scripts/Display/ClockLabelWeek.gd" id="17_m2lvw"]
+[ext_resource type="Script" uid="uid://cj26gw1m5i2hy" path="res://Scripts/Display/camera_2d.gd" id="17_ygm5j"]
+[ext_resource type="Script" uid="uid://c6qc5yvbop0ga" path="res://Scripts/Display/ClockLabelDay.gd" id="18_45s7x"]
+[ext_resource type="Script" uid="uid://ce2ffnkm7m6sp" path="res://Scripts/Display/ClockLabelTime.gd" id="19_2fnit"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_g31lc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ygm5j"]
+bg_color = Color(0.43904907, 0.43904915, 0.43904895, 1)
+corner_radius_bottom_left = 70
+
+[node name="Control" type="Control" unique_id=1785656359]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="BackgroundTextRect" type="TextureRect" parent="." unique_id=1357707454]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 2160.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ygm5j")
+expand_mode = 1
+stretch_mode = 1
+script = ExtResource("2_2fnit")
+phaseHours = null
+phaseTextures = null
+
+[node name="BackgroundButton" type="Button" parent="BackgroundTextRect" unique_id=577057494 groups=["RichButtonGroup"]]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+toggle_mode = true
+action_mode = 0
+button_group = SubResource("ButtonGroup_g31lc")
+
+[node name="TextureButtonWinch" type="TextureButton" parent="BackgroundTextRect" unique_id=889253730 groups=["RichButtonGroup"]]
+propagate_maximum_size = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.384
+anchor_top = 0.15900001
+anchor_right = 0.384
+anchor_bottom = 0.15900001
+offset_left = -150.28003
+offset_top = -99.160034
+offset_right = -0.2800293
+offset_bottom = 0.8399658
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+mouse_filter = 1
+toggle_mode = true
+action_mode = 0
+button_group = SubResource("ButtonGroup_g31lc")
+texture_normal = ExtResource("2_45s7x")
+texture_hover = ExtResource("3_2fnit")
+texture_click_mask = ExtResource("4_y0gl6")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="TextureButtonMineOffice" type="TextureButton" parent="BackgroundTextRect" unique_id=521034872 groups=["RichButtonGroup"]]
+propagate_maximum_size = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.554
+anchor_top = 0.51900005
+anchor_right = 0.554
+anchor_bottom = 0.51900005
+offset_left = -199.68005
+offset_top = -1184.5602
+offset_right = -49.680054
+offset_bottom = -1104.5602
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+mouse_filter = 1
+toggle_mode = true
+action_mode = 0
+button_group = SubResource("ButtonGroup_g31lc")
+texture_normal = ExtResource("5_7r3ve")
+texture_hover = ExtResource("6_ijbwh")
+texture_click_mask = ExtResource("7_ga25u")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="TextureButtonEngineHouse" type="TextureButton" parent="BackgroundTextRect" unique_id=1006049615 groups=["RichButtonGroup"]]
+propagate_maximum_size = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.666
+anchor_top = 0.39400002
+anchor_right = 0.666
+anchor_bottom = 0.39400002
+offset_left = -88.71997
+offset_top = -1010.56006
+offset_right = 11.280029
+offset_bottom = -830.56006
+scale = Vector2(2, 2)
+mouse_filter = 1
+toggle_mode = true
+action_mode = 0
+button_group = SubResource("ButtonGroup_g31lc")
+texture_normal = ExtResource("8_k6kbj")
+texture_hover = ExtResource("9_4cixc")
+texture_click_mask = ExtResource("10_c2gus")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="TextureButtonOreProcessing" type="TextureButton" parent="BackgroundTextRect" unique_id=1737286919 groups=["RichButtonGroup"]]
+propagate_maximum_size = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.52500004
+anchor_top = 0.43400002
+anchor_right = 0.52500004
+anchor_bottom = 0.43400002
+offset_left = -171.00006
+offset_top = -975.16003
+offset_right = -71.00006
+offset_bottom = -950.55994
+scale = Vector2(3, 3)
+mouse_filter = 1
+toggle_mode = true
+action_mode = 0
+button_group = SubResource("ButtonGroup_g31lc")
+texture_normal = ExtResource("11_bfsmu")
+texture_hover = ExtResource("12_ekymg")
+texture_click_mask = ExtResource("13_xholb")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2072507778]
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer" unique_id=2135156470]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 718.0
+offset_top = -540.0
+offset_right = 960.0
+offset_bottom = -364.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ygm5j")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/PanelContainer" unique_id=193886594]
+layout_mode = 2
+
+[node name="ClockLabelWeek" type="Label" parent="CanvasLayer/PanelContainer/VBoxContainer" unique_id=1917576101]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 40
+script = ExtResource("17_m2lvw")
+
+[node name="ClockLabelDay" type="Label" parent="CanvasLayer/PanelContainer/VBoxContainer" unique_id=1920836068]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 40
+script = ExtResource("18_45s7x")
+
+[node name="ClockLabelTime" type="Label" parent="CanvasLayer/PanelContainer/VBoxContainer" unique_id=1715765138]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 40
+script = ExtResource("19_2fnit")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1910234354]
+limit_left = 0
+limit_top = 0
+limit_right = 1920
+limit_bottom = 3240
+script = ExtResource("17_ygm5j")

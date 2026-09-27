@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://c6ue14jvj2l07"
+path="res://.godot/imported/MineOfficePlaceholderMask.bmp-3c36da498aa7fe8ccc4be508f6edaeca.res"
+
+[deps]
+
+source_file="res://Textures/MineOfficePlaceholderMask.bmp"
+dest_files=["res://.godot/imported/MineOfficePlaceholderMask.bmp-3c36da498aa7fe8ccc4be508f6edaeca.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

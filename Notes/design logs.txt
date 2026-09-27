@@ -1,0 +1,20 @@
+- Note on notation - 26/9/26
+To create a clear line between my own objects and Godot native objects i am using c++ (ish) notation.
+PascalCase for classes, camelCase for functions and variables, sCREAMINGcAMELcASE for constants.
+
+- Window approach considerations - 26/9/26
+I want draggable windows that can be opened simultaneously, i will use godot's native window object with some simple code to enable dragging behaviour.
+A decision should be made whether to instantiate and destroy each window as needed, or have all windows continuously instantiated and simply control their visibility as needed.
+Godot keeps instantiated nodes loaded in memory but instantiating/destroying nodes takes CPU time. 
+Considering the scale of the project controlling visibility is the preferable approach, which should also improve menu responsiveness.
+
+
+- Broad archiectural considerations - 26/9/26
+To promote maintainability and extensibility i want to design this game following a model-view-controller pattern.
+The model will take the form of normal classes defined by scripts which will be orchestrated by a special node that will act as the API layer between the model and UI.
+
+
+- Ingame clock - 26/9/26
+Implemented an ingame clock making use of Godot's native Timer instead of coupling the timer with _process.
+Clock's data and methods are contained in a resource script which is initialised alongside a Timer object by the Orchestrator node.
+Clock UI nodes access the time state through the orchestrator node and never concern themselves with model logic.

@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://5jyfvh780l03"
+path="res://.godot/imported/PlaceholderArrowMask.bmp-38ec89496245ab2793e918a4fe173faa.res"
+
+[deps]
+
+source_file="res://Textures/PlaceholderArrowMask.bmp"
+dest_files=["res://.godot/imported/PlaceholderArrowMask.bmp-38ec89496245ab2793e918a4fe173faa.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

@@ -1,0 +1,166 @@
+Project idea
+
+- maybe a mining simulation game? player plays as a mine owner and each worker is simulated in regards to their social lives & relationship to the mine. 
+- 2D interface? Godot?
+- perhaps just simulate the material relations and disregard the social (insofar as they can be distinguished), taking account of the food workers need to survive, where the workers get that food from, the money paid by the mine/factory owners to workers & how that relates to their profits (simulate shareholder pressure?), the revenues and fixed + variable costs of the mine/factory.
+
+- simulate in the abstract the transition between traditional & industrial modes of production from the perspective of a mine owning tycoon, reflecting the player's actions in an emergent way through interrelated systems.
+^
+spit balling not strict requirements
+
+
+
+simplified
+
+simulate in the abstract the relationship between workers and the player's mine which reflects the player's actions in an emergent way through interrelated systems.
+
+workers working in a factory generate revenue, that revenue is given to the factory (the player) to be used as they see fit (reinvestment, wages, fixed costs) the player will be able to raise and lower wages to keep more or less of the surplus value to themselves, the amount of money available to workers in the form of wages effects their material conditions
+
+the workers themselves will be individual nodes that act within constraints defined by their conditions in regards to the player's mine. 
+There will have to be a clock to structure the logic, the game should begin with a given number of workers and a proportion of those workers will be 'born' (come of age to work in the mine) and will 'die' of natural causes (become too old to work in the mine) on a regular cycle. worker nodes all have a timer that decides when they 'die' of old age. workers could have a nutrition parameter that scales the rate their death timer drops at and decreases some specific revenue factor variable. 
+workers could have an experience value that scales with time spent working & their productivity modifier.
+
+
+implementation concepts:
+
+
+#--------------------------------------------------------------------------------------#
+
+
+NEW PHASE ~xx/5ish/26 - modified for grammar and clarity 23/9/26
+
+sort of structured stream of consciousness:
+
+something very systems heavy to tell the modern industrial story of kernow in a condensed and carefully arranged microcosm exploring the consequences of rapid industrialisation on kernowyon society & its landscape
+
+Mine & village simulation loosely modelled on Geevor & St Just but presented as a sort of platonic ideal 'universal kernowyon coastal mining village' a la how the fictional village of Tassing is presented in the Obsidian title Pentiment
+
+The mine is under control of the player while the village is autonomous and makes what decisions it can
+the village will be a practical and diegetic form of feedback to the player, its state reflecting the choices and knock-on effects of the player's actions over the course of the game
+
+at this stage im thinking maybe a weekly cycle for the main gameplay loop, monday -> saturday will be one phase of continuous gameplay characterised by daily sub-loops perhaps with pauses for events and the game will pause on sunday for
+a retrospective & upgrade/advanced action menu.
+alternately for a longer form experience a monthly or even quarterly cycle could be options.
+
+Or maybe a weekly cycle system to preserve that small scale operational detail with a time skip where the mine owner travels & returns for whatever reason. 
+alternately have that be the premise for the epilogue presenting the long term knock on effects of the short-term game, might be more practical for a 1st attempt.
+
+also seeing that the period of time that the player/tycoon was heading the mine and making decisions was so short yet had such an impact on the town could be thematically strong.
+the impact the intrusion of this system of alien capitalist logic had through its transformative & accelerationist nature had a disproportionate developmental influence over the social & economic order that existed before.
+And despite taking place during a very short period of the capitalist's(player's) life, they had complete dominion over the lives of the people who worked to make the people he represented wealthy. 
+it can present some of the dangers of complete sublimation to 'rational' control to the player. To push the mental framework they approached the intrinsically moralised economic choices of the game through the sausage grinder of historical materialism.
+
+
+having two phases of the game before and after this skip could be even stronger, contrasting an earlier transitory phase of capital's metamorphosis to a later one & all the differences that brings as well as smaller ripples from the player's actions panning out from the first phase, but that mutliplies the work involved substantially, one thing at a time.
+
+
+need to do some reading & talk to some old people
+
+
+#--------------------------------------------------------------------------------------#
+
+
+4/7/26 - 8/7/26 (this is where i started keeping dates, the earlier sections are a few months older)
+NEWER PHASE
+post Geevor visit
+
+my main goal here is to try and nail down some mechanical concepts and a narrative framing for the first phase/v1.0 of the project
+
+-------- themes --------
+
+the core focus of the game will be on the relation between a sort of fictional, platonic ideal 'universal cornish mining village' during the birth of capitalist modernity.
+I want to explore the kind of social transformation driven by the ceaselessly accelerating logic of techno-capital by focussing intensely on one of its principle birthplaces.
+I want to put the player in the position of a figure that personifies the social-historical-political-economic 'engine' that directed this transformation, the mine captain.
+This is because the mine manager sits at a sort of crossroads between the macro structures of capital and the state, as well as the micro structure of the town and mine, and the captain must navigate that conflict of interest with regard to the responsibilities vested in him, both by the community that serves him and the financial structures that he serves.
+
+-------- narrative --------
+
+the mine will be modelled loosely on the history of Geevor/North Levant but transposed ~40-50 years backwards and blended with the social histories of other towns in the west penwith & lizard peninsulas.
+Geevor was built in the 1910s almost upon the ruins of the old north levant mine which operated from 1851 - 1891
+the ruins of old north levant are visible from geevor and create a really interesting sort of gradient from old to new mining infrastructure
+i want to depict a similar gradient of history but with an 18th century mine in place of old levant then have the mine the player manages be a mid 19th century revival of the same site
+this lets me cram some extra historical content into the game as well as providing a natural framing device.
+
+the narrative will start with the player choosing one of three(?) backgrounds, each managerial positions in different British industries as well as a simple character creation system allowing players to enter a name and choose an appearence preset (sort of like sunless skies?).
+These backgrounds will represent different kinds of commerce characteristic of britain's rapidly industrialising economy, and will bring with them unique choices & flavour text in the early parts of the game 
+(e.g. a maritime background might give additional shipping choices from their time at sea, or a factory background might have contacts capable of acquiring better or cheaper industrial equipment, etc.)
+
+the player character will be a 19th century 'corporate climber' who has been tasked by the investment firm/bank to oversee the development of the Cornish Mine after their acquisition of the site.
+This provides a natural framing to introduce the player character to various mining concepts as they're a sort of fish out of water being shown the ropes from a very top-down perspective.
+there will be a cast of archetypal characters that are conversed with and personify different elements of the game's social world. 
+For instance important figures in the town like the parish priest, head(s) of town council, and figures representing the different 'industries' of the town like fishing and metalworking will be characters the player can interact with
+there will also be 'foreman' type figures within the social structure of the mine itself which will get similar character treatment.
+
+-------- gameplay --------
+
+structurally the game will be divided into three orders of cycles and take place over a set time (a year?)
+There will be monthly, weekly, and daily cycles. A day should take something like <5 minutes. there will be active pause and time controls a la paradox grand strat games (or maybe stop during daily segments?)
+the weekly cycle will be the principle decision making point.
+to begin, work days will include monday -> saturday, sunday is a day of rest for the workers and maintenance/socialising/decision making for the mine manager
+
+The daily cycle itself is currently quite subject to change. the working concept is dividing each day into 5 segments, two working shifts with mossel (lunch) inbetween, capped by shift start/end segments
+
+the main kind of mining gameplay will be directing the stoping of existing shafts and developing of new shafts
+the mining process will essentially be a series of timers associated with different actions that are modified by manifold conditions. for the player this timer will be represented as a fancy looking animation that will 
+change with some of the associated conditions.
+
+-------- visual concepts --------
+
+In my minds eye the mining village is sort of like a hybrid between Pendeen, Newlyn, and the various tiny fishing villages that exist all around the lizard. 
+a clifftop mine next to a village/small town that snakes down a river valley into a small cove from the top of the cliff, surrounded by hilly pasture and hardy farmland.
+
+the work done by studio Ghibli on the movie Laputa could be a rich source to draw from, much of the architecture and landscapes in that film draw from a field trip the animation team did to Wales in the 80s 
+As much of the welsh mining industry shares substantial lineage with Cornish mining in terms of technologies and infrastructure, not to mention the celtic connection it should be fertile ground for inspiration.
+
+-------- closing thoughts --------
+
+Calling it here for this phase, i have enough of a framework to begin some preliminary programming & a strong basis to pursue further research
+The next section of this document will be a research report on Cornish mining with a particular eye for how it could be gamified. much of the actual mechanical functionality is still floating around my head in a sort of superposition.
+I need to pin down a concrete scope for the first actual development phase to understand my technical requirements.
+
+the two key possibilities in my mind are creating a museum game, ie something they can stick on a screen in a heritage site somewhere as an educational tool, with a core focus on exploring the sort of immediate mechanical and social processes of mining.
+and creating a fully fledged narrative focussed game. there's some conflict in these goals but i can see the former flowing pretty naturally into the latter, especially if the former is made as a kind of vertical slice or prototype.
+
+
+#--------------------------------------------------------------------------------------#
+
+
+9/7/26
+
+Here i want to try and map out the mining process in my own words to try and force the ideas to crystalise
+I also need to try and understand the financial business structures behind the mines because from my understanding its somewhat atypical compared to modern joint stock companies
+
+The process begins with surveying, geologists and dowsers looking for locations likely to contain ores based on known geological conditions, surface deposits, and sometimes pure luck.
+from there exploratory shafts are sunk to assess the potential of a site despite the cost simply because of the risk involved with establishing a mining venture 
+
+miners dug levels (tunnels) and shafts to reach the ore, at first with manual tools like picks, hammers, borers(chisels), and gads (wedges)
+later on gunpowder and eventually dynamite and pneumatic tools would see widespread use
+
+the main forms of transit up and down the mineshaft back then were animal driven whims or water and later steam driven winches with kibbles (large iron containers) for ores and series of 
+ladders and platforms for the miners themselves (later superseded by the man engine and more modern elevator systems).
+Ore was moved from stopes toward shafts using handbarrows or tramways which had various kinds of propulsion in different time periods.
+Once reaching the surface ore would be transported to be dressed.
+
+#--------------------------------------------------------------------------------------#
+
+22/9/26
+
+NEW PHASE (now university project(?))
+
+Need to make detailed proposal.
+
+I've been reading Joseph & Williams' history of Ding Dong mine which has kindled a vision for a sort of vertical slice/prototype project exploring the history of the site within a much more narrow scope.
+Instead of focussing on a fictional, idealised Cornish ur-village based on st Just/Geevor (for now) i want to make the game specifically about Ding Dong mines and the parish of Heamoor during the turn of the 18th century, centred on the legal dispute between James Watt & co and the pirate engine builders illegally modifying their engines to take advantage of Watt's patented innovations around that time, such as Richard Trevithick during his time at Ding Dong.
+
+I'm going to take excerpts relevant to this vertical slice from my previous notes and compile them here for reference:
+
+- 'something very systems heavy to tell the industrial story of kernow in a condensed and carefully arranged microcosm exploring the consequences of rapid industrialisation on kernowyon society'
+
+- 'the village will be a practical and diegetic form of feedback to the player, its state reflecting the choices and knock-on effects of the player's actions over the course of the game'
+
+- 'I want to explore the kind of social transformation driven by the ceaselessly accelerating logic of techno-capital by focussing intensely on one of its principle birthplaces. I want to put the player in the position of a figure that personifies the social-political-economic 'engine' that directed a major part of this transformation, the mine captain. The captain sits at a sort of crossroads between the macro structures of capital and the state, as well as the micro structures of the town and mine, and the captain must navigate these conflicts of interest with careful regard for the responsibilities vested in him, both by the community that serve him and to the financial structures that he serves.'
+
+Dehumanisation through both mechanical and social processes will be a major theme
+
+the main problem this project seeks to solve is the lack of awareness and understanding many people have regarding the transformation of british society during the industrial revolution.
+I want to explore solutions to this by applying my knowledge of computing technologies like software development, systems thinking, and  data mining to design and develop a computer game that will educate the player through their interactions with systems that simulate and narrativise a microcosm of cornwall's industrial metamorphosis.

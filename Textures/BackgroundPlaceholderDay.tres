@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="DayPhase" format=3 uid="uid://ckwut0h2cpjxw"]
+
+[ext_resource type="Script" uid="uid://byyl7gkoc6cnl" path="res://Scripts/Display/DayPhase.gd" id="1_pibts"]
+[ext_resource type="Texture2D" uid="uid://qw0a1yvbqyid" path="res://Textures/BackgroundPlaceholder.png" id="2_868c1"]
+
+[resource]
+script = ExtResource("1_pibts")
+startHour = 6
+texture = ExtResource("2_868c1")
+metadata/_custom_type_script = "uid://byyl7gkoc6cnl"
