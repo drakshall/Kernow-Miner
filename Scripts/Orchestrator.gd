@@ -18,7 +18,7 @@ func _ready() -> void:
 	clockState = GameClock.new()
 	_setupClock()
 
-# Time functions
+# Time internal functions
 
 func _setupClock() -> void:
 	_clock = Timer.new()
@@ -28,20 +28,23 @@ func _setupClock() -> void:
 	add_child(_clock)
 
 func _onClockTimeout() -> void:
-	var _previousHour := clockState.getHour()
+	var previousHour := clockState.getHour()
 	clockState.totalGameMinutes += 1
 	gameMinuteTicked.emit(clockState.totalGameMinutes)
-	if clockState.getHour() != _previousHour:
+	if clockState.getHour() != previousHour:
 		gameHourTicked.emit(clockState.getHour())
 
-func _applyPauseState() -> void:
+func _applyClockState(restartTimer: bool = false) -> void:
 	var shouldPause := isClockPaused()
-	if _clock.paused == shouldPause:
-		return
-	_clock.paused = shouldPause
 	if not shouldPause:
-		_clock.wait_time = 1 / _gameSpeed
-	clockPauseChanged.emit(shouldPause)
+		var newWaitTime := 1.0 / _gameSpeed
+		if restartTimer:
+			_clock.start(newWaitTime)
+		else:
+			_clock.wait_time = newWaitTime
+	if _clock.paused != shouldPause:
+		_clock.paused = shouldPause
+		clockPauseChanged.emit(shouldPause)
 
 #--------------------------- Time API -------------------------------#
 
@@ -61,29 +64,20 @@ func pauseClock(source: StringName) -> void:
 	if _pauseSources.has(source):
 		return
 	_pauseSources[source] = true
-	_applyPauseState()
+	_applyClockState()
 
 func resumeClock(source: StringName) -> void:
 	if not _pauseSources.has(source):
 		return
 	_pauseSources.erase(source)
-	_applyPauseState()
-
-func togglePause(source: StringName) -> void:
-	if _pauseSources.has(source):
-		resumeClock(source)
-	else:
-		pauseClock(source)
+	_applyClockState()
 
 func isClockPaused() -> bool:
-	return not _pauseSources.is_empty()
+	return _gameSpeed == 0.0 or not _pauseSources.is_empty()
 
 func setGameSpeed(speed: float) -> void:
-	if isSpeedLocked():
-		return
-	_gameSpeed = max(speed, 0.01)
-	if not isClockPaused():
-		_clock.wait_time = 1 / _gameSpeed
+	_gameSpeed = max(speed, 0.0)
+	_applyClockState(true)
 	gameSpeedChanged.emit(_gameSpeed)
 
 func getGameSpeed() -> float:

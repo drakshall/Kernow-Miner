@@ -212,11 +212,17 @@ size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 40
 script = ExtResource("19_2fnit")
 
-[node name="ClockControls" type="HBoxContainer" parent="CanvasLayer/PanelContainer/VBoxContainer" unique_id=732546866]
+[node name="ClockControls" type="HBoxContainer" parent="CanvasLayer/PanelContainer/VBoxContainer" unique_id=732546866 node_paths=PackedStringArray("buttons")]
 layout_mode = 2
 size_flags_horizontal = 4
 script = ExtResource("21_vntm3")
-controlMap = null
+buttons = {
+&"10xButton": NodePath("10xButton"),
+&"1xButton": NodePath("1xButton"),
+&"2xButton": NodePath("2xButton"),
+&"5xButton": NodePath("5xButton"),
+&"PauseButton": NodePath("PauseButton")
+}
 
 [node name="PauseButton" type="TextureButton" parent="CanvasLayer/PanelContainer/VBoxContainer/ClockControls" unique_id=1677555597 groups=["TimeControlButtonGroup"]]
 layout_mode = 2

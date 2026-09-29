@@ -8,13 +8,32 @@ A decision should be made whether to instantiate and destroy each window as need
 Godot keeps instantiated nodes loaded in memory but instantiating/destroying nodes takes CPU time. 
 Considering the scale of the project controlling visibility is the preferable approach, which should also improve menu responsiveness.
 
-
 - Broad archiectural considerations - 26/9/26
 To promote maintainability and extensibility i want to design this game following a model-view-controller pattern.
 The model will take the form of normal classes defined by scripts which will be orchestrated by a special node that will act as the API layer between the model and UI.
-
 
 - Ingame clock - 26/9/26
 Implemented an ingame clock making use of Godot's native Timer instead of coupling the timer with _process.
 Clock's data and methods are contained in a resource script which is initialised alongside a Timer object by the Orchestrator node.
 Clock UI nodes access the time state through the orchestrator node and never concern themselves with model logic.
+
+
+- Scrolling camera - 27/9/26
+Implemented a custom camera view which is controlled with (otherwise) unhandled MMB & scroll wheel inputs.
+Camera movement constraints are defined by the Camera's limit properties and enforced by a helper function.
+
+- Day/Night cycle - 27/9/26
+Implemented two new backgrounds that extend the screen downward (enabling scroll behaviour) as well as represent a day and night state.
+Also implemented a DayPhase resource object which is a coupling between an integer from 0-23 and a 2D background texture
+The number is the hour at which a phase starts, and the texture is what is switched to at that hour.
+
+- Timescale API - 27/9/26
+Extended the time API to include functions covering timescale and pause/resume functionality.
+As well as functions to manage the player's use of the timescale buttons so that the player can be restricted from interacting with the timescale when needed
+
+
+- Timescale controls - 29/9/26
+
+
+- Notes on simulation approach - 29/9/26
+Something like a combination of an agent-based, system dynamics, and network model which also incorporates elements of discrete event simulation (particularly for the mine itself) to create a rich, reactive system is the vision at the moment
