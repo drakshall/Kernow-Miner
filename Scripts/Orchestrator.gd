@@ -4,61 +4,61 @@ extends Node
 
 signal gameMinuteTicked(totalGameMinutes: int)
 signal gameHourTicked(hour: int)
+signal gameDayTicked(day: int)
+signal gameWeekTicked(week: int)
 signal clockPauseChanged(paused: bool)
-signal gameSpeedChanged(speed: float)
+signal gameSpeedChanged(speed: int)
 signal speedLockChanged(locked: bool)
 
-var clockState: GameClock
-var _clock: Timer
-var _gameSpeed: float = 1.0
+const uNITSpERmINUTE := 10
+const tICKiNTERVAL := 1.0 / uNITSpERmINUTE
+
+var _accumulator: int = 0
 var _pauseSources: Dictionary = {}
 var _speedLockSources: Dictionary = {}
+var clockState: GameClock
+@onready var _clock: Timer = $ClockTimer
 
 func _ready() -> void:
 	clockState = GameClock.new()
-	_setupClock()
+	_clock.timeout.connect(_onHeartbeat)
 
-# Time internal functions
+#------------ Tick logic ------------#
 
-func _setupClock() -> void:
-	_clock = Timer.new()
-	_clock.wait_time = 1.0
-	_clock.autostart = true
-	_clock.timeout.connect(_onClockTimeout)
-	add_child(_clock)
+func _onHeartbeat() -> void:
+	_accumulator += clockState.gameSpeed
+	while _accumulator >= uNITSpERmINUTE:
+		_accumulator -= uNITSpERmINUTE
+		_emitTimeTicks()
 
-func _onClockTimeout() -> void:
+func _emitTimeTicks() -> void:
 	var previousHour := clockState.getHour()
-	clockState.totalGameMinutes += 1
+	var previousDay := clockState.getDay()
+	var previousWeek := clockState.getWeek()
+	
+	clockState.advanceMinute()
 	gameMinuteTicked.emit(clockState.totalGameMinutes)
+	
 	if clockState.getHour() != previousHour:
 		gameHourTicked.emit(clockState.getHour())
+	if clockState.getDay() != previousDay:
+		gameDayTicked.emit(clockState.getDay())
+	if clockState.getWeek() != previousWeek:
+		gameWeekTicked.emit(clockState.getWeek())
 
-func _applyClockState(restartTimer: bool = false) -> void:
-	var shouldPause := isClockPaused()
-	if not shouldPause:
-		var newWaitTime := 1.0 / _gameSpeed
-		if restartTimer:
-			_clock.start(newWaitTime)
-		else:
-			_clock.wait_time = newWaitTime
+func _shouldPauseCheck() -> bool:
+	return clockState.gameSpeed == 0 or not _pauseSources.is_empty()
+
+func _applyClockState() -> void:
+	var shouldPause := _shouldPauseCheck()
+	clockState.isPaused = shouldPause
 	if _clock.paused != shouldPause:
 		_clock.paused = shouldPause
 		clockPauseChanged.emit(shouldPause)
 
 #--------------------------- Time API -------------------------------#
 
-func getMinute() -> int:
-	return clockState.getMinute()
-
-func getHour() -> int:
-	return clockState.getHour()
-
-func getDay() -> int:
-	return clockState.getDay()
-
-func getWeek() -> int:
-	return clockState.getWeek()
+#------ Speed controls ------#
 
 func pauseClock(source: StringName) -> void:
 	if _pauseSources.has(source):
@@ -73,17 +73,19 @@ func resumeClock(source: StringName) -> void:
 	_applyClockState()
 
 func isClockPaused() -> bool:
-	return _gameSpeed == 0.0 or not _pauseSources.is_empty()
+	return clockState.isPaused
 
-func setGameSpeed(speed: float) -> void:
-	_gameSpeed = max(speed, 0.0)
-	_applyClockState(true)
-	gameSpeedChanged.emit(_gameSpeed)
+func setGameSpeed(speed: int) -> void:
+	clockState.setSpeed(speed)
+	_applyClockState()
+	gameSpeedChanged.emit(clockState.gameSpeed)
 
-func getGameSpeed() -> float:
-	return _gameSpeed
+func getGameSpeed() -> int:
+	return clockState.gameSpeed
 
-func lockSpeed(source:StringName) -> void:
+#------ Time access controls ------#
+
+func lockSpeed(source: StringName) -> void:
 	if _speedLockSources.has(source):
 		return
 	_speedLockSources[source] = true

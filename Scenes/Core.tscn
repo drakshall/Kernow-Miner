@@ -266,7 +266,7 @@ texture_hover = ExtResource("30_58dqi")
 
 [node name="Camera" type="Camera2D" parent="." unique_id=1910234354]
 limit_left = 0
-limit_top = 0
+limit_top = -10000003
 limit_right = 1920
-limit_bottom = 3240
+limit_bottom = 9999997
 script = ExtResource("17_ygm5j")

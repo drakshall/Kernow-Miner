@@ -1,12 +1,12 @@
 extends HBoxContainer
 
 @export var buttons: Dictionary[StringName, TextureButton] = {}
-@export var controlMap: Dictionary[StringName, float] = {
-	&"PauseButton": 0.0,
-	&"1xButton": 1.0,
-	&"2xButton": 2.0,
-	&"5xButton": 5.0,
-	&"10xButton": 10.0,
+@export var controlMap: Dictionary[StringName, int] = {
+	&"PauseButton": 0,
+	&"1xButton": 1,
+	&"2xButton": 2,
+	&"5xButton": 5,
+	&"10xButton": 10,
 }
 
 func _ready() -> void:
@@ -28,8 +28,8 @@ func _onButtonPressed(id: StringName) -> void:
 func _onPauseChanged(_paused: bool) -> void:
 	_syncButtons()
 
-func _onSpeedChanged(_speed: float) -> void:
-		_syncButtons()
+func _onSpeedChanged(_speed: int) -> void:
+	_syncButtons()
 
 func _syncButtons() -> void:
 	var speed := Orchestrator.getGameSpeed()
@@ -37,13 +37,13 @@ func _syncButtons() -> void:
 	for id in controlMap:
 		var shouldSelect := false
 		if paused:
-			shouldSelect = controlMap[id] == 0.0
+			shouldSelect = controlMap[id] == 0
 		else:
-			shouldSelect = is_equal_approx(controlMap[id],speed)
+			shouldSelect = controlMap[id] == speed
 		buttons[id].button_pressed = shouldSelect
 
 func _applySpeedLock(locked: bool) -> void:
 	for id in controlMap:
-		if controlMap[id] == 0.0:
+		if controlMap[id] == 0:
 			continue
 		buttons[id].disabled = locked

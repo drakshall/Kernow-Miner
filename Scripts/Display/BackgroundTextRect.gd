@@ -12,7 +12,7 @@ func _hourTicked(_hour: int) -> void:
 	_refreshPhase()
 
 func _refreshPhase() -> void:
-	var hour := Orchestrator.getHour()
+	var hour := Orchestrator.clockState.getHour()
 	var phase := _phaseHour(hour)
 	if phase == _currentPhase:
 		return

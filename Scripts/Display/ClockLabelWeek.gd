@@ -5,4 +5,4 @@ func _ready() -> void:
 	Orchestrator.gameMinuteTicked.connect(_Refresh)
 
 func _Refresh(_totalGameMinutes: int) -> void:
-	text = "Week %s" %(Orchestrator.getWeek())
+	text = "Week %s" %(Orchestrator.clockState.getWeek())

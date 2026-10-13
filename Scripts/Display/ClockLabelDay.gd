@@ -7,4 +7,4 @@ func _ready() -> void:
 	Orchestrator.gameMinuteTicked.connect(_Refresh)
 
 func _Refresh(_totalGameMinutes: int) -> void:
-	text = dAYnAMES[Orchestrator.getDay()]
+	text = dAYnAMES[Orchestrator.clockState.getDay()]

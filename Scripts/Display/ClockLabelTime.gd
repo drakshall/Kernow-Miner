@@ -5,4 +5,4 @@ func _ready() -> void:
 	Orchestrator.gameMinuteTicked.connect(_Refresh)
 
 func _Refresh(_totalGameMinutes: int) -> void:
-	text = "%02d:%02d" %[(Orchestrator.getHour()),(Orchestrator.getMinute())]
+	text = "%02d:%02d" %[(Orchestrator.clockState.getHour()),(Orchestrator.clockState.getMinute())]
