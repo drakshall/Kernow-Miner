@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://w8jh2jw7823r"]
 
+[ext_resource type="Script" uid="uid://uy3sd2yyr3di" path="res://Scenes/core.gd" id="1_m2lvw"]
 [ext_resource type="Texture2D" uid="uid://qw0a1yvbqyid" path="res://Textures/BackgroundPlaceholder.png" id="1_ygm5j"]
 [ext_resource type="Script" uid="uid://cwcltof31jpp6" path="res://Scripts/Display/BackgroundTextRect.gd" id="2_2fnit"]
 [ext_resource type="Texture2D" uid="uid://bbo8mwasowq8t" path="res://Textures/WinchPlaceholder.png" id="2_45s7x"]
@@ -49,6 +50,14 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
+script = ExtResource("1_m2lvw")
+
+[node name="Camera" type="Camera2D" parent="." unique_id=1910234354]
+limit_left = 0
+limit_top = -10000003
+limit_right = 1920
+limit_bottom = 9999997
+script = ExtResource("17_ygm5j")
 
 [node name="BackgroundTextRect" type="TextureRect" parent="." unique_id=1357707454]
 layout_mode = 1
@@ -263,10 +272,3 @@ action_mode = 0
 button_group = SubResource("ButtonGroup_vntm3")
 texture_normal = ExtResource("25_wybh3")
 texture_hover = ExtResource("30_58dqi")
-
-[node name="Camera" type="Camera2D" parent="." unique_id=1910234354]
-limit_left = 0
-limit_top = -10000003
-limit_right = 1920
-limit_bottom = 9999997
-script = ExtResource("17_ygm5j")

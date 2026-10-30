@@ -1,0 +1,101 @@
+\documentclass[12pt, a4paper]{scrreprt}
+\title{KernowMiner Design Bible}
+\subtitle{Version 0.1}
+\usepackage{caption}
+\date{\today}
+\usepackage{graphicx}
+\usepackage{csquotes}
+
+\setcounter{tocdepth}{2}
+\setcounter{secnumdepth}{-1}
+
+\begin{document}
+	
+\begin{titlepage}
+	\centering
+	\vspace*{\fill}
+	{\Huge\bfseries KernowMiner Design Bible\par}
+	\vspace{0.5em}
+	{\Large Version 0.1\par}
+	\vspace{1em}
+	{\large \today\par}
+	\vspace{2em}
+	\includegraphics[width=0.9\linewidth]{ImageRefs/StJustTinMiners}
+	\captionof*{figure}{'St Just Tin Miners' Harold Harvey, 1935}
+	\vspace*{\fill}
+\end{titlepage}
+	\tableofcontents
+	\part{Narrative}
+	\chapter{Broad Concepts}
+	\section{Ludonarrative}
+	The Ludonarrative (from Latin `ludos' meaning `game') is the narrative of interaction, the interlocking motion of mechanical systems and the narrative frameworks contextualising them that produce the discrete experience of play. The core goal of this project is to tailor this arrangement of systems in a way that explores the kind of social transformation historically driven by the accelerating logic of techno-capital by focusing on one of its birthplaces in the Cornish countryside. To put the player in the position of the mine captain. A figure that sits at a sort of crossroad between the rapidly evolving needs of the emerging international market as well as the communities and families that rely on the operations of the mine to live. The captain must navigate these conflicts of interest with careful regard for the responsibilities vested in them, by both the communities and financial structures that they serve, bearing witness to the immense social transformation this process historically involved.
+	\pagebreak
+	\section{Themes}
+	The transformation of people and environment by alien forces beyond their control. The metamorphosis of the moral framework of labour in its relationship to faith, the land, and the means of production.
+	\blockquote[Karl Marx, \emph{Fragment On Machines} (1857--58)][.]{
+	The worker's activity, reduced to a mere abstraction of activity, is determined and regulated on all sides by the movement of the machinery, and not the opposite. The science which compels the inanimate limbs of the machinery, by their construction, to act purposefully, as an automaton, does not exist in the worker's consciousness, but rather acts upon him through the machine as an alien power, as the power of the machine itself. (...) The production process has ceased to be a labour process in the sense of a process dominated by labour as its governing unity. Labour appears, rather, merely as a conscious organ, scattered among the individual living workers at numerous points of the mechanical system; subsumed under the total process of the machinery itself, as itself only a link of the system, whose unity exists not in the living workers, but rather in the living (active) machinery, which confronts his individual, insignificant doings as a mighty organism. In machinery, objectified labour confronts living labour within the labour process itself as the power which rules it; a power which, as the appropriation of living labour, is the form of capital. The transformation of the means of labour into machinery, and of living labour into a mere living accessory of this machinery, as the means of its action, also posits the absorption of the labour process in its material character as a mere moment of the realization process of capital}
+	\pagebreak
+	\section{Stories}
+	\subsection{Local}
+	Trevithick/Watt dispute, Rise of methodism, Abolition movement/Fall of the Prices, Rise of the Bolithos, The consequences of enclosure, The Expansion of the railroads, smuggling/skullduggery, Penzance Natural History and Antiquarian Society/focus on Ancient sites, Royal Geological Society of Penzance/birth of geology
+	\subsection{National}
+	Hungry 40s, Napoleonic wars, global price fluctuations from other international events
+	\pagebreak
+	\section{Compromises}
+	Time compressions, gaps in the record that necessitate interpretation
+	\chapter{Timeline}
+	\part{Visuals}
+	\chapter{Rich Backgrounds}
+	\section{Background Images}
+	\subsection{Background States}
+	\section{Background Buttons}
+	\chapter{Floating UI}
+	\section{General Style}
+	\subsection{Fonts}
+	\section{Building Interiors}
+	\section{Events}
+	\subsection{Mail}
+	\subsection{Popups}
+	\section{Ledger}
+	\part{Technical}
+	\chapter{Architecture}
+	To promote maintainability and extensibility the game follows a high level model-view-controller pattern. Frontend code is concerned with the implementation details of user interfacing and visual representation, the components of the frontend that need to interact with the underlying model do so through the orchestrator's APIs, and state changes flow from the model to the frontend through the orchestrator's signal handling. Backend code is passive, and primarily concerned with recording the program's state and acting as a source of truth for the other layers. A core goal of this approach is to maintain a 'plug and play' capacity so that both the underlying simulation(s) and the frontend interface can be heavily modified or entirely swapped out without having to modify the entire system, abstracting changes behind the facade provided by the orchestrator.
+	\chapter{Frontend}
+	\section{Camera}
+	A Godot Camera2D node that can pan and zoom around the dimensions of the background TextureRect by interpreting unhandled scroll and MMB inputs. Scrolling zooms the camera by a defined multiplier and panning uses the delta in mouse position while holding MMB to proportionally move the camera a number of pixels then applies further decaying motion proportional to the acceleration of that delta. The parent node of both the background TextureRect and the Camera contains a connection that automatically updates the dimensions of the camera's enforced boundaries whenever the dimensions of the background change.
+	\subsubsection*{Camera node custom parameters:}
+	\begin{itemize}
+		\item Zoom Step: 1.1
+		\item Max Zoom: 4.0
+		\item Drag Sensitivity: 1
+		\item Slide Friction: 2000
+		\item Slide Min Speed: 40
+	\end{itemize}
+	\section{Backgrounds}
+	Backgrounds are large TextureRect nodes from which the visible boundaries of the game are derived, they primarily serve as visual context for buttons or other gameplay elements. They also have some dynamic cosmetic behaviours related to the time of day, and will in the future react to many other conditions in the game state.
+	\subsection{Temporal Cycles}
+	The way this currently works is a proof of concept that will be reworked to allow for better flexibility in the future, currently it works by creating a resource that associates a background texture variant with an integer between 0 and 23 and listens for the hourly signal fired by the game clock to know when to swap textures. In the future i want to make the sky transparent and have a separate resource for handling things like a moving sky, moon phases, or other astral events. The system that exists now for the daycycle can be adapted for seasonal cycles, or arbitrary events that change the background.
+	\subsection{Lighting}
+	This is something i'd expect to implement alongside a refinement pass of the mine gameplay, which at this stage is still itself entirely conceptual. I would very much like to implement some simple 2D lighting, both for the day/night cycle and to make the subterranean parts of the background more dynamic. The only way i can see this working currently is expanding on what i described in the prior section with the separate sky resource, dividing a portion of the visual content of the background into a 'foreground' layer to implement coloured lighting and shadowcasting.
+	\subsection{Maps}
+	Very far off concept, maps of southwest Cornwall, Britain, and the world. Each with ways to interact with far off individuals, organisations, and businesses, as well as visualising trade deals made by the player. As in showing the delivery progress of purchases or deals that the player is a stakeholder in with an Indiana Jones style dotted line on the map. 
+	\section{Floating UI}
+	The interface systems built on the CanvasLayer that move with the Camera.
+	\subsection{Topbar}
+	\subsubsection{Clock}
+	A series of buttons that map to functions in the orchestrator's time API for controlling the game's timescale.
+	\subsection{Window System}
+	(under development)
+	\subsubsection{Ledger}
+	This is something that will be implemented alongside or directly after the first pass at the simulation. A management screen documenting everything relevant about the mine with interfaces to modify operating characteristics of the enterprise. Employment, labour allocation, expense and revenue books, etc. Essentially the player's control console. Some kind of third party data modelling module could be exceptionally useful here.
+	\subsubsection{Buildings}
+	Constituent components of the mine represented by TextureButtons placed 
+	\subsection{title}
+	\chapter{Backend}
+	\section{Simulation}
+	\subsection{Clock}
+	Implemented an ingame clock making use of Godot's native Timer instead of coupling the timer with \texttt{\_process}. Clock's data and methods are contained in a resource script which is initialised alongside a Timer object by the Orchestrator node. Clock UI nodes access the time state through the orchestrator node and never concern themselves with model logic.
+	\part{References}
+	\chapter{Images}
+	\chapter{Bibliography}
+\end{document}

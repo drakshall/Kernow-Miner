@@ -1,0 +1,44 @@
+\contentsline {part}{\numberline {I}Narrative}{4}{}%
+\contentsline {chapter}{\nonumberline Broad Concepts}{5}{}%
+\contentsline {section}{\nonumberline Ludonarrative}{5}{}%
+\contentsline {section}{\nonumberline Themes}{6}{}%
+\contentsline {section}{\nonumberline Stories}{7}{}%
+\contentsline {subsection}{\nonumberline Local}{7}{}%
+\contentsline {subsection}{\nonumberline National}{7}{}%
+\contentsline {section}{\nonumberline Compromises}{8}{}%
+\contentsline {chapter}{\nonumberline Timeline}{9}{}%
+\contentsline {part}{\numberline {II}Visuals}{10}{}%
+\contentsline {chapter}{\nonumberline Rich Backgrounds}{11}{}%
+\contentsline {section}{\nonumberline Background Images}{11}{}%
+\contentsline {subsection}{\nonumberline Background States}{11}{}%
+\contentsline {section}{\nonumberline Background Buttons}{11}{}%
+\contentsline {chapter}{\nonumberline Floating UI}{12}{}%
+\contentsline {section}{\nonumberline General Style}{12}{}%
+\contentsline {subsection}{\nonumberline Fonts}{12}{}%
+\contentsline {section}{\nonumberline Building Interiors}{12}{}%
+\contentsline {section}{\nonumberline Events}{12}{}%
+\contentsline {subsection}{\nonumberline Mail}{12}{}%
+\contentsline {subsection}{\nonumberline Popups}{12}{}%
+\contentsline {section}{\nonumberline Ledger}{12}{}%
+\contentsline {part}{\numberline {III}Technical}{13}{}%
+\contentsline {chapter}{\nonumberline Architecture}{14}{}%
+\contentsline {chapter}{\nonumberline Frontend}{15}{}%
+\contentsline {section}{\nonumberline Camera}{15}{}%
+\contentsline {section}{\nonumberline Backgrounds}{15}{}%
+\contentsline {subsection}{\nonumberline Temporal Cycles}{15}{}%
+\contentsline {subsection}{\nonumberline Lighting}{16}{}%
+\contentsline {subsection}{\nonumberline Maps}{16}{}%
+\contentsline {section}{\nonumberline Floating UI}{16}{}%
+\contentsline {subsection}{\nonumberline Topbar}{16}{}%
+\contentsline {subsubsection}{\nonumberline Clock}{16}{}%
+\contentsline {subsection}{\nonumberline Window System}{16}{}%
+\contentsline {subsubsection}{\nonumberline Ledger}{16}{}%
+\contentsline {subsubsection}{\nonumberline Buildings}{17}{}%
+\contentsline {subsection}{\nonumberline title}{17}{}%
+\contentsline {chapter}{\nonumberline Backend}{18}{}%
+\contentsline {section}{\nonumberline Simulation}{18}{}%
+\contentsline {subsection}{\nonumberline Clock}{18}{}%
+\contentsline {part}{\numberline {IV}References}{19}{}%
+\contentsline {chapter}{\nonumberline Images}{20}{}%
+\contentsline {chapter}{\nonumberline Bibliography}{21}{}%
+\providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

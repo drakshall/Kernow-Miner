@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://qp54cv2i7k20"
-path="res://.godot/imported/Kernowminer moodboard.png-03e18ba495f4d255f62f0f8cda990ffb.ctex"
+uid="uid://cdcp80unwyhoc"
+path="res://.godot/imported/StJustTinMiners.jpg-9069172f0ca0f1c77de5171e5d49a989.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Notes/Kernowminer moodboard.png"
-dest_files=["res://.godot/imported/Kernowminer moodboard.png-03e18ba495f4d255f62f0f8cda990ffb.ctex"]
+source_file="res://Notes/Documentation/ImageRefs/StJustTinMiners.jpg"
+dest_files=["res://.godot/imported/StJustTinMiners.jpg-9069172f0ca0f1c77de5171e5d49a989.ctex"]
 
 [params]
 
