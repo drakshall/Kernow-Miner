@@ -21,6 +21,7 @@ var clockState: GameClock
 
 func _ready() -> void:
 	clockState = GameClock.new()
+	_clock.wait_time = tICKiNTERVAL
 	_clock.timeout.connect(_onHeartbeat)
 
 #------------ Tick logic ------------#

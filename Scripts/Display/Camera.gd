@@ -1,12 +1,14 @@
 extends Camera2D
 
-# Multiplicative zoom factor applied each scroll step
+# Multiplicative zoom factor applied each scroll step.
 @export var zoomStep: float = 1.1
+# Upper clamp for multiplicative zoom factor.
 @export var maxZoom: float = 4.0
-# Multiplier applied on mouse-to-camera translation
+# Multiplicative drag sensitivity applied on mouse-to-camera translation.
 @export var dragSensitivity: float = 1.0
-# Deceleration rate during camera slide in pixels/second^2
+# Deceleration rate during camera slide in pixels/second^2.
 @export var slideFriction: float = 2000.0
+# Defines the velocity that must be exceeded for a drag to start and must be moved below the threshold to stop.
 @export var slideMinSpeed: float = 40.0
 
 var _dragging := false

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.10.18)  30 OCT 2026 18:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.10.18)  1 NOV 2026 16:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -311,41 +311,41 @@ Package scrkbase Info: You've told me to use the font selection of the element
 chapter without number
 [5
 
-] [6] [7] [8]
+] [6] [7]
 chapter without number
-[9
+[8
 
 ]
 part II.
 Package scrkbase Info: You've told me to use the font selection of the element
 (scrkbase)             `partprefix' that is an alias of element `partnumber'
-(scrkbase)              on input line 47.
+(scrkbase)              on input line 46.
+[9
+
+]
+chapter without number
 [10
 
 ]
 chapter without number
 [11
 
-]
+] [12] [13]
 chapter without number
-[12
+[14
 
 ]
 part III.
 Package scrkbase Info: You've told me to use the font selection of the element
 (scrkbase)             `partprefix' that is an alias of element `partnumber'
-(scrkbase)              on input line 60.
-[13
-
-]
-chapter without number
-[14
-
-]
-chapter without number
+(scrkbase)              on input line 91.
 [15
 
-] [16] [17]
+] [16]
+chapter without number
+[17
+
+]
 chapter without number
 [18
 
@@ -353,7 +353,7 @@ chapter without number
 part IV.
 Package scrkbase Info: You've told me to use the font selection of the element
 (scrkbase)             `partprefix' that is an alias of element `partnumber'
-(scrkbase)              on input line 98.
+(scrkbase)              on input line 107.
 [19
 
 ]
@@ -371,11 +371,11 @@ L3 programming layer <2026-09-09>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 7013 strings out of 467392
- 149391 string characters out of 5405638
- 694640 words of memory out of 5000000
- 36359 multiletter control sequences out of 15000+600000
- 635864 words of font info for 63 fonts, out of 8000000 for 9000
+ 7010 strings out of 467392
+ 149352 string characters out of 5405638
+ 693640 words of memory out of 5000000
+ 36357 multiletter control sequences out of 15000+600000
+ 635695 words of font info for 62 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  108i,7n,107p,11253b,339s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\macks\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm
@@ -384,11 +384,10 @@ ts/cm/cmbx12.pfb><C:/Users/macks/AppData/Local/Programs/MiKTeX/fonts/type1/publ
 ic/amsfonts/cm/cmr12.pfb><C:/Users/macks/AppData/Local/Programs/MiKTeX/fonts/ty
 pe1/public/amsfonts/cm/cmr17.pfb><C:/Users/macks/AppData/Local/Programs/MiKTeX/
 fonts/type1/public/amsfonts/cm/cmssbx10.pfb><C:/Users/macks/AppData/Local/Progr
-ams/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/macks/AppData/Lo
-cal/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on KernowMinerBible.pdf (21 pages, 251290 bytes).
+ams/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb>
+Output written on KernowMinerBible.pdf (21 pages, 249793 bytes).
 PDF statistics:
- 106 PDF objects out of 1000 (max. 8388607)
+ 101 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
