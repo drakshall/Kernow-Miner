@@ -5,6 +5,7 @@
 \contentsline {section}{\nonumberline Stories}{7}{}%
 \contentsline {subsection}{\nonumberline Local}{7}{}%
 \contentsline {subsection}{\nonumberline National}{7}{}%
+\contentsline {subsection}{\nonumberline Events}{7}{}%
 \contentsline {section}{\nonumberline Compromises}{7}{}%
 \contentsline {chapter}{\nonumberline Timeline}{8}{}%
 \contentsline {part}{\numberline {II}Technical}{9}{}%

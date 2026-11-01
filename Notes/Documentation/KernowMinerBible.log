@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.10.18)  1 NOV 2026 16:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.10.18)  1 NOV 2026 18:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -319,7 +319,7 @@ chapter without number
 part II.
 Package scrkbase Info: You've told me to use the font selection of the element
 (scrkbase)             `partprefix' that is an alias of element `partnumber'
-(scrkbase)              on input line 46.
+(scrkbase)              on input line 47.
 [9
 
 ]
@@ -338,7 +338,7 @@ chapter without number
 part III.
 Package scrkbase Info: You've told me to use the font selection of the element
 (scrkbase)             `partprefix' that is an alias of element `partnumber'
-(scrkbase)              on input line 91.
+(scrkbase)              on input line 92.
 [15
 
 ] [16]
@@ -353,7 +353,7 @@ chapter without number
 part IV.
 Package scrkbase Info: You've told me to use the font selection of the element
 (scrkbase)             `partprefix' that is an alias of element `partnumber'
-(scrkbase)              on input line 107.
+(scrkbase)              on input line 108.
 [19
 
 ]
@@ -373,7 +373,7 @@ L3 programming layer <2026-09-09>
 Here is how much of TeX's memory you used:
  7010 strings out of 467392
  149352 string characters out of 5405638
- 693640 words of memory out of 5000000
+ 694640 words of memory out of 5000000
  36357 multiletter control sequences out of 15000+600000
  635695 words of font info for 62 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -385,7 +385,7 @@ ic/amsfonts/cm/cmr12.pfb><C:/Users/macks/AppData/Local/Programs/MiKTeX/fonts/ty
 pe1/public/amsfonts/cm/cmr17.pfb><C:/Users/macks/AppData/Local/Programs/MiKTeX/
 fonts/type1/public/amsfonts/cm/cmssbx10.pfb><C:/Users/macks/AppData/Local/Progr
 ams/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on KernowMinerBible.pdf (21 pages, 249793 bytes).
+Output written on KernowMinerBible.pdf (21 pages, 250145 bytes).
 PDF statistics:
  101 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

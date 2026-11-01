@@ -40,12 +40,13 @@
 	Trevithick/Watt dispute, Rise of methodism, Abolition movement,Fall of the Prices , Rise of the Bolithos, The consequences of enclosure, The Expansion of the railroads, smuggling/skullduggery, Penzance Natural History and Antiquarian Society/focus on Ancient sites, Royal Geological Society of Penzance/birth of geology
 	\subsection{National}
 	Hungry 40s, Napoleonic wars, global price fluctuations from other international events
+	\subsection{Events}
 	\section{Compromises}
 	Time compressions, gaps in the record that necessitate interpretation
 	\chapter{Timeline}
 	\part{Technical}
 	\chapter{Big Picture}
-	The game is ultimately going to take the form of three conceptual components, the mine, the community, and the rest of the world. Each of these will be connected to one another through the underlying simulation which will put the fate of two of these components in the hands of the player, one in directly, and the other through the UI system. The two primary cycles of the game will be daily and weekly with monthly and seasonal cycles also playing an important, but higher level role. The weekly cycle will be used to give directives for the mine, then in the daily operations different actions may be necessary to continue or optimise operations, reactions to events, shuffling of labour allocation to maximise profitability, etc. 
+	The game is ultimately going to take the form of three conceptual components, the mine, the community, and the rest of the world. Each of these will be connected to one another through the underlying simulation which will put the fate of two of these components in the hands of the player, one directly, and the other through the UI system. The two primary cycles of the game will be daily and weekly with monthly and seasonal cycles also playing an important, but higher level role. The weekly cycle will be used to give directives for the mine, then in the daily operations different actions may be necessary to continue or optimise operations, reactions to events, shuffling of labour allocation to maximise profitability, etc. 
 	
 	The goal of the current phase of development is getting the game in a state to model a year of simplified gameplay, this process should greatly inform the challenges of further extending the scale and complexity of the simulation.
 	\section{Architecture}
@@ -75,11 +76,11 @@
 	\subsubsection{Clock}
 	A series of visual buttons that map to functions in the orchestrator's time API for controlling the game's timescale.
 	\subsubsection{Widgets}
-	Not yet implemented. Icons relating to resource counts or other relevant information, also acting as buttons that connect to the relevant page in the ledger
+	Not yet implemented. Icons relating to resource counts or other relevant information, also acting as buttons that connect to the relevant page in the ledger. Could be worthwhile making this sort of relationship structural, and allow the user to modify the order and content of these widgets. Allowing any kind of resource or statistic to have a shortcut added to a limited number of slots akin to the later Anno games, but this is a second-pass goal.
 	\subsection{Window System}
 	(under development)
 	\subsubsection{Ledger}
-	This is something that will be implemented alongside or directly after the first pass at the simulation. A management screen documenting everything relevant about the mine with interfaces to modify operating characteristics of the enterprise. Employment, labour allocation, expense and revenue books, etc. Essentially the player's control console. Some kind of third party data modelling module could be exceptionally useful here.
+	This is something that will be implemented just before, and alongside the first pass at the simulation. A management screen documenting everything relevant about the mine with interfaces to modify operating characteristics of the enterprise. Employment, labour allocation, expense and revenue books, etc. Essentially the player's control console. Some kind of third party data modelling module could be exceptionally useful here.
 	\subsubsection{Buildings}
 	Constituent components of the mine represented by TextureButtons placed relative to a background. The buildings will be associated with entries in the ledger and act as shortcuts to their respective entries. These will contain an interface with a visual representation of the interior of the building beside a control console for that building including relevant operating information, potential upgrades, and employment/labour allocation options.
 	\chapter{Backend}
