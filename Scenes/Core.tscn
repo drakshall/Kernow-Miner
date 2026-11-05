@@ -192,7 +192,7 @@ anchor_left = 0.93700004
 anchor_top = 0.11100001
 anchor_right = 0.93700004
 anchor_bottom = 0.11100001
-offset_left = -119.04004
+offset_left = -237.04004
 offset_top = -119.88001
 offset_right = 120.95996
 offset_bottom = 120.11999
@@ -226,6 +226,9 @@ layout_mode = 2
 size_flags_horizontal = 4
 script = ExtResource("21_vntm3")
 buttons = {
+&"1/2xButton": NodePath("05xButton"),
+&"1/4xButton": NodePath("025xButton"),
+&"1/8xButton": NodePath("0125xButton"),
 &"10xButton": NodePath("10xButton"),
 &"1xButton": NodePath("1xButton"),
 &"2xButton": NodePath("2xButton"),
@@ -240,6 +243,30 @@ action_mode = 0
 button_group = SubResource("ButtonGroup_vntm3")
 texture_normal = ExtResource("21_c2gus")
 texture_hover = ExtResource("22_gfk6a")
+
+[node name="0125xButton" type="TextureButton" parent="CanvasLayer/PanelContainer/VBoxContainer/ClockControls" unique_id=474306996 groups=["TimeControlButtonGroup"]]
+layout_mode = 2
+toggle_mode = true
+action_mode = 0
+button_group = SubResource("ButtonGroup_vntm3")
+texture_normal = ExtResource("22_bfsmu")
+texture_hover = ExtResource("24_vntm3")
+
+[node name="025xButton" type="TextureButton" parent="CanvasLayer/PanelContainer/VBoxContainer/ClockControls" unique_id=666566256 groups=["TimeControlButtonGroup"]]
+layout_mode = 2
+toggle_mode = true
+action_mode = 0
+button_group = SubResource("ButtonGroup_vntm3")
+texture_normal = ExtResource("22_bfsmu")
+texture_hover = ExtResource("24_vntm3")
+
+[node name="05xButton" type="TextureButton" parent="CanvasLayer/PanelContainer/VBoxContainer/ClockControls" unique_id=952322132 groups=["TimeControlButtonGroup"]]
+layout_mode = 2
+toggle_mode = true
+action_mode = 0
+button_group = SubResource("ButtonGroup_vntm3")
+texture_normal = ExtResource("22_bfsmu")
+texture_hover = ExtResource("24_vntm3")
 
 [node name="1xButton" type="TextureButton" parent="CanvasLayer/PanelContainer/VBoxContainer/ClockControls" unique_id=1549926033 groups=["TimeControlButtonGroup"]]
 layout_mode = 2

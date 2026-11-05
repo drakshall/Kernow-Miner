@@ -1,33 +1,44 @@
 class_name GameClock
 extends Resource
 
+#---------------- Calendar Constants ---------------#
+
+const hOURSpERdAY := 24
+const dAYSpERwEEK := 7
+const dAYSpERyEAR := 364
+const wEEKSpERyEAR := 52
+
 #---------------------- State ---------------------#
 
-var totalGameMinutes: int = 0
-var gameSpeed: int = 1
+var totalGameHours: int = 0
+var gameSpeed: int = 0
 var isPaused: bool = false
 
 #--------------- Mutation Functions ---------------#
 
-func advanceMinute() -> void:
-	totalGameMinutes += 1
+func advanceHour() -> void:
+	totalGameHours += 1
 
 func setSpeed(speed: int) -> void:
 	gameSpeed = max(speed, 0)
 
 #--------------- Derivation Functions -------------#
 
-func getMinute() -> int:
-	return totalGameMinutes % 60
-
 func getHour() -> int:
-	@warning_ignore("integer_division")
-	return (totalGameMinutes / 60) % 24
+	return totalGameHours % hOURSpERdAY
 
-func getDay() -> int:
+func getDayOfWeek() -> int:
 	@warning_ignore("integer_division")
-	return (totalGameMinutes / 1440) % 7
+	return (totalGameHours / hOURSpERdAY) % dAYSpERwEEK
 
-func getWeek() -> int:
+func getDayOfYear() -> int:
 	@warning_ignore("integer_division")
-	return (totalGameMinutes / 10080)
+	return (totalGameHours / hOURSpERdAY) % dAYSpERyEAR
+
+func getWeekOfYear() -> int:
+	@warning_ignore("integer_division")
+	return getDayOfYear() / 7 + 1
+
+func getYear() -> int:
+	@warning_ignore("integer_division")
+	return totalGameHours / (hOURSpERdAY * dAYSpERyEAR)

@@ -2,16 +2,19 @@ extends Node
 
 #------------------------- Connections & startup -------------------------# 
 
-signal gameMinuteTicked(totalGameMinutes: int)
 signal gameHourTicked(hour: int)
-signal gameDayTicked(day: int)
-signal gameWeekTicked(week: int)
+signal gameDayTicked(dayOfYear: int)
+signal gameWeekTicked(weekOfYear: int)
+signal gameSeasonTicked(season: int)
+signal gameYearTicked(year: int)
 signal clockPauseChanged(paused: bool)
-signal gameSpeedChanged(speed: int)
+signal gameSpeedChanged(multiplier: int)
 signal speedLockChanged(locked: bool)
 
-const uNITSpERmINUTE := 10
-const tICKiNTERVAL := 1.0 / uNITSpERmINUTE
+const sPEEDsCALE := 1024
+const hEARTBEATSpERhOUR := 10 
+const tICKiNTERVAL := 1.0 / hEARTBEATSpERhOUR
+const uNITSpERhOUR := hEARTBEATSpERhOUR * sPEEDsCALE
 
 var _accumulator: int = 0
 var _pauseSources: Dictionary = {}
@@ -21,31 +24,33 @@ var clockState: GameClock
 
 func _ready() -> void:
 	clockState = GameClock.new()
+	clockState.setSpeed(sPEEDsCALE)
 	_clock.wait_time = tICKiNTERVAL
 	_clock.timeout.connect(_onHeartbeat)
+	_applyClockState()
 
 #------------ Tick logic ------------#
 
 func _onHeartbeat() -> void:
 	_accumulator += clockState.gameSpeed
-	while _accumulator >= uNITSpERmINUTE:
-		_accumulator -= uNITSpERmINUTE
+	while _accumulator >= uNITSpERhOUR:
+		_accumulator -= uNITSpERhOUR
 		_emitTimeTicks()
 
 func _emitTimeTicks() -> void:
-	var previousHour := clockState.getHour()
-	var previousDay := clockState.getDay()
-	var previousWeek := clockState.getWeek()
+	var previousDay := clockState.getDayOfYear()
+	var previousWeek := clockState.getDayOfWeek()
+	var previousYear := clockState.getYear()
 	
-	clockState.advanceMinute()
-	gameMinuteTicked.emit(clockState.totalGameMinutes)
+	clockState.advanceHour()
+	gameHourTicked.emit(clockState.getHour())
 	
-	if clockState.getHour() != previousHour:
-		gameHourTicked.emit(clockState.getHour())
-	if clockState.getDay() != previousDay:
-		gameDayTicked.emit(clockState.getDay())
-	if clockState.getWeek() != previousWeek:
-		gameWeekTicked.emit(clockState.getWeek())
+	if clockState.getDayOfYear() != previousDay:
+		gameDayTicked.emit(clockState.getDayOfYear())
+	if clockState.getWeekOfYear() != previousWeek:
+		gameWeekTicked.emit(clockState.getWeekOfYear())
+	if clockState.getYear() != previousYear:
+		gameYearTicked.emit(clockState.getYear())
 
 func _shouldPauseCheck() -> bool:
 	return clockState.gameSpeed == 0 or not _pauseSources.is_empty()
@@ -58,6 +63,20 @@ func _applyClockState() -> void:
 		clockPauseChanged.emit(shouldPause)
 
 #--------------------------- Time API -------------------------------#
+
+#---------- Queries ----------#
+
+func getTotalGameHours() -> int:
+	return clockState.totalGameHours
+
+func getGameSpeed() -> int:
+	return clockState.gameSpeed
+
+func isClockPaused() -> bool:
+	return clockState.isPaused
+
+func isSpeedLocked() -> bool:
+	return not _speedLockSources.is_empty()
 
 #------ Speed controls ------#
 
@@ -73,18 +92,13 @@ func resumeClock(source: StringName) -> void:
 	_pauseSources.erase(source)
 	_applyClockState()
 
-func isClockPaused() -> bool:
-	return clockState.isPaused
-
 func setGameSpeed(speed: int) -> void:
 	clockState.setSpeed(speed)
 	_applyClockState()
 	gameSpeedChanged.emit(clockState.gameSpeed)
 
-func getGameSpeed() -> int:
-	return clockState.gameSpeed
-
 #------ Time access controls ------#
+# note: This code is currently dormant and planned for use with something like an event system that forces an unchangeable pause state by locking the controls. 
 
 func lockSpeed(source: StringName) -> void:
 	if _speedLockSources.has(source):
@@ -99,6 +113,3 @@ func unlockSpeed(source: StringName) -> void:
 	_speedLockSources.erase(source)
 	if _speedLockSources.is_empty():
 		speedLockChanged.emit(false)
-
-func isSpeedLocked() -> bool:
-	return not _speedLockSources.is_empty()

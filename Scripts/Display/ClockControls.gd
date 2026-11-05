@@ -2,11 +2,14 @@ extends HBoxContainer
 
 @export var buttons: Dictionary[StringName, TextureButton] = {}
 @export var controlMap: Dictionary[StringName, int] = {
+	&"1/8xButton": 128,
+	&"1/4xButton": 256,
+	&"1/2xButton": 512,
 	&"PauseButton": 0,
-	&"1xButton": 1,
-	&"2xButton": 2,
-	&"5xButton": 5,
-	&"10xButton": 10,
+	&"1xButton": 1024,
+	&"2xButton": 2048,
+	&"5xButton": 5120,
+	&"10xButton": 10240,
 }
 
 func _ready() -> void:

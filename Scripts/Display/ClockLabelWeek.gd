@@ -1,8 +1,8 @@
 extends Label
 
 func _ready() -> void:
-	_Refresh(Orchestrator.clockState.totalGameMinutes)
-	Orchestrator.gameMinuteTicked.connect(_Refresh)
+	_Refresh(0)
+	Orchestrator.gameWeekTicked.connect(_Refresh)
 
-func _Refresh(_totalGameMinutes: int) -> void:
-	text = "Week %s" %(Orchestrator.clockState.getWeek())
+func _Refresh(_value: int) -> void:
+	text = "Week %s" %(Orchestrator.clockState.getWeekOfYear())
