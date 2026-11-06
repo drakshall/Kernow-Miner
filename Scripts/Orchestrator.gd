@@ -5,7 +5,6 @@ extends Node
 signal gameHourTicked(hour: int)
 signal gameDayTicked(dayOfYear: int)
 signal gameWeekTicked(weekOfYear: int)
-signal gameSeasonTicked(season: int)
 signal gameYearTicked(year: int)
 signal clockPauseChanged(paused: bool)
 signal gameSpeedChanged(multiplier: int)

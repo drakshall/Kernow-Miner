@@ -1,3 +1,4 @@
+class_name BoundedCamera
 extends Camera2D
 
 # Multiplicative zoom factor applied each scroll step.
@@ -26,14 +27,15 @@ func _ready() -> void:
 # Handles otherwise unhandled inputs to avoid cases like scrolling in a menu also scrolling the map
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
-		if event.is_pressed():
-			match event.button_index:
+		var mb := event as InputEventMouseButton
+		if mb.is_pressed():
+			match mb.button_index:
 				MOUSE_BUTTON_WHEEL_UP:
 					_applyZoom(zoomStep)
 				MOUSE_BUTTON_WHEEL_DOWN:
 					_applyZoom(1.0 / zoomStep)
 					
-		if event.button_index == MOUSE_BUTTON_MIDDLE:
+		if mb.button_index == MOUSE_BUTTON_MIDDLE:
 			if event.is_pressed():
 				_startDrag()
 			else:
@@ -79,8 +81,8 @@ func applyBounds(newSize: Vector2) -> void:
 	limit_bottom = int(newSize.y)
 	
 	var viewportWidth := get_viewport_rect().size.x
-	_minZoom = min(1.0, viewportWidth / newSize.x)
-	zoom = Vector2(max(zoom.x, _minZoom), max(zoom.y, _minZoom))
+	_minZoom = minf(1.0, viewportWidth / newSize.x)
+	zoom = Vector2(maxf(zoom.x, _minZoom), maxf(zoom.y, _minZoom))
 	_boundaryClamps()
 
 func _process(delta: float) -> void:
