@@ -3,5 +3,5 @@ extends Resource
 
 var id: int
 var StrictSettlementId: int
-var householdIds: Array[int]
+var familyIds: Array[int]
 var housingStructureId: int

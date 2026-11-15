@@ -10,7 +10,8 @@ enum State {
 }
 
 var id: int
-var HousingLeaseId: int
+var housingOwnershipId: int
+var housingLeaseId: int
 var displayName: String
 var buildingCondition: int
 var buildingState: State

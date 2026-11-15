@@ -30,7 +30,7 @@ var genderRole: bool
 var occupation: Occupation
 var placeOfWorkId: int = -1
 var placeOfBirthId: int = -1
-var personalWealth: int
+var personalLiquidCapital: int
 var allowanceRate: int
 
 

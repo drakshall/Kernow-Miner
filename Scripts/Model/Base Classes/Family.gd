@@ -1,10 +1,11 @@
-class_name Household
+class_name Family
 extends Resource
 
 var id: int = -1
-var housingLeaseId: int = -1
+var leasedHousingId: int = -1
+var ownedHousingId: int = -1
 var memberIds: Array[int] = []
 var foodStores: int
-var commonLiquidCapital: int
+var familyLiquidCapital: int
 var economicHeadId: int = -1
 var legalHeadId: int = -1
