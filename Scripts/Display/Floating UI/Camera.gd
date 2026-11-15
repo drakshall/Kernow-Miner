@@ -9,7 +9,7 @@ extends Camera2D
 @export var dragSensitivity: float = 1.0
 # Deceleration rate during camera slide in pixels/second^2.
 @export var slideFriction: float = 2000.0
-# Defines the velocity that must be exceeded for a drag to start and must be moved below the threshold to stop.
+# Defines the velocity threshold for a drag to start or stop.
 @export var slideMinSpeed: float = 40.0
 
 var _dragging := false
@@ -79,7 +79,6 @@ func applyBounds(newSize: Vector2) -> void:
 	limit_top = 0
 	limit_right = int(newSize.x)
 	limit_bottom = int(newSize.y)
-	
 	var viewportWidth := get_viewport_rect().size.x
 	_minZoom = minf(1.0, viewportWidth / newSize.x)
 	zoom = Vector2(maxf(zoom.x, _minZoom), maxf(zoom.y, _minZoom))

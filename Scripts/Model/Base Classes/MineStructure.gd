@@ -1,4 +1,4 @@
-class_name BaseStructure
+class_name MineStructure
 extends Resource
 
 enum State {
@@ -9,17 +9,10 @@ enum State {
 	dERELICT,
 }
 
-enum Location {
-	mINE,
-	vILLAGE,
-	wIDERwORLD,
-}
-
 var id: int
-var enterpriseId: int = -1
+var costBookAssociationId: int = -1
 var displayName: String
 var buildingCondition: int
 var buildingState: State
 var buildingConstructionProgress: int
-var buildingLocation: Location
-var workerIds: Array[int]
+var assignedWorkerIds: Array[int]

@@ -25,13 +25,14 @@ var injured: bool
 
 # Characteristics 
 var age: int
+var sex: bool
 var genderRole: bool
 var occupation: Occupation
 var placeOfWorkId: int = -1
 var placeOfBirthId: int = -1
-var education: int
 var personalWealth: int
 var allowanceRate: int
+
 
 # Skills
 var social: int
@@ -46,6 +47,6 @@ var engineering: int
 var smithing: int
 
 # Relationships
-var spouseId: int
-var parentIds: Array[int]
-var householdId: int
+var spouseId: int = -1
+var parentIds: Array[int] = []
+var householdId: int = -1
