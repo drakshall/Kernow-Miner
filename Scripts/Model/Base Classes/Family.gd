@@ -9,3 +9,5 @@ var foodStores: int
 var familyLiquidCapital: int
 var economicHeadId: int = -1
 var legalHeadId: int = -1
+var familyLastName: String
+var spawnSeed: int
