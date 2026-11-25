@@ -20,18 +20,6 @@ const fEMALEnAMES := [
 	"Demelza", "Elowen", "Isolde", "Jenifer", "Kensa", "Lowenna", "Kerenza", "Morwenna", "Tamsyn", "Tegen", "Ysella", "Senara", "Breaca", "Endellion", "Merryn", "Wenna", "Kaja", "Elys", "Morgana", "Kenwyn", "Kelyn"
 ]
 
-#enum lASTnAMES {
-	#Pengelly, Dyer, Angwin, Jekyll, Jenkins, Kelly, Beaglehole, Tregona, Nance, Chynoweth, Penrose, Penhaligon, Pascoe, Woon, Kernick, Grose, Boson, Boscawen, Hocking, Snell, Rodda, Kempthorne, Chenoweth, Pendarves, Penberthy, Penna, Trembath, Trethowan, Tregenna, Trefethen, Treblilcock, Roscoe, Walker, Watson, Evans, Trevorrow, Trewhella, Vingoe
-#}
-#
-#enum mALEnAMES {
-	#Jago, Jowan, Jack, Richard, Jowen, Paul, Josep, Kitto, Davydh, Lowen, Ruan, Caswyn, Petroc, Perran, Arthur, Tristan, Locryn, Cadan, Jory, Denzel, Mawgan, Germoe, Gerran, Levan, Treve, Caradoc, Androw, Aswen, Klemmo
-#}
-#
-#enum fEMALEnAMES {
-	#Demelza, Elowen, Isolde, Jenifer, Kensa, Lowenna, Kerenza, Morwenna, Tamsyn, Tegen, Ysella, Senara, Breaca, Endellion, Merryn, Wenna, Kaja, Elys, Morgana, Kenwyn, Kelyn
-#}
-
 # ------------------------------- Randomiser Helpers------------------------------ #
 
 func _pickArrayWith(rng: RandomNumberGenerator, arr: Array) -> Variant:
@@ -87,7 +75,7 @@ func _spawnPeon(params: Dictionary = {}) -> Peon:
 func spawnFamily(params: Dictionary = {}) -> Family:
 	var f := Family.new()
 	familyRegistry.register(f)
-	var familySeed := _rng.randi()
+	var familySeed := masterRng.randi()
 	var localRng := RandomNumberGenerator.new()
 	localRng.seed = familySeed
 	

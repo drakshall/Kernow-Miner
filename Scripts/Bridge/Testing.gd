@@ -25,3 +25,4 @@ func validateHungerOperation() -> void:
 		return print("Food stores do not match expected state, test failed")
 	elif cumulativeFoodStoresEnd == cumulativeFoodStoresStart - cumulativeHungerRate:
 		return print("Food stores match expected state, test succeeded")
+	

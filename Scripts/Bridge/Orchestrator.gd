@@ -24,6 +24,7 @@ var peonRegistry: PeonRegistry
 var hungerSystem: HungerSystem
 var classFactory: ClassFactory
 var testing: Testing
+var masterRng: RandomNumberGenerator
 @onready var _clock: Timer = $ClockTimer
 
 func _ready() -> void:
@@ -33,6 +34,8 @@ func _ready() -> void:
 	_clock.timeout.connect(_onHeartbeat)
 	_applyClockState()
 	
+	masterRng = RandomNumberGenerator.new()
+
 	peonRegistry = PeonRegistry.new()
 	familyRegistry = FamilyRegistry.new()
 	classFactory = ClassFactory.new()
@@ -41,6 +44,9 @@ func _ready() -> void:
 	
 	classFactory.peonRegistry = peonRegistry
 	classFactory.familyRegistry = familyRegistry
+	classFactory.masterRng = masterRng
+	hungerSystem.peonRegistry = peonRegistry
+	hungerSystem.familyRegistry = familyRegistry
 	
 	testing.familyRegistry = familyRegistry
 	testing.hungerSystem = hungerSystem
