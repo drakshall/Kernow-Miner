@@ -23,6 +23,10 @@ func setSpeed(speed: int) -> void:
 	gameSpeed = max(speed, 0)
 
 #--------------- Derivation Functions -------------#
+# dont worry about the warnings its chill
+# godot just doesnt like integer division 
+
+# one day this will be a beautiful calendar system with leap years and everything
 
 func getHour() -> int:
 	return totalGameHours % hOURSpERdAY

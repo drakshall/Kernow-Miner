@@ -19,6 +19,11 @@ var _accumulator: int = 0
 var _pauseSources: Dictionary = {}
 var _speedLockSources: Dictionary = {}
 var clockState: GameClock
+var familyRegistry: FamilyRegistry
+var peonRegistry: PeonRegistry
+var hungerSystem: HungerSystem
+var classFactory: ClassFactory
+var testing: Testing
 @onready var _clock: Timer = $ClockTimer
 
 func _ready() -> void:
@@ -27,6 +32,19 @@ func _ready() -> void:
 	_clock.wait_time = tICKiNTERVAL
 	_clock.timeout.connect(_onHeartbeat)
 	_applyClockState()
+	
+	peonRegistry = PeonRegistry.new()
+	familyRegistry = FamilyRegistry.new()
+	classFactory = ClassFactory.new()
+	hungerSystem = HungerSystem.new()
+	testing = Testing.new()
+	
+	classFactory.peonRegistry = peonRegistry
+	classFactory.familyRegistry = familyRegistry
+	
+	testing.familyRegistry = familyRegistry
+	testing.hungerSystem = hungerSystem
+	testing.validateHungerOperation()
 
 #------------ Tick logic ------------#
 
@@ -97,7 +115,7 @@ func setGameSpeed(speed: int) -> void:
 	gameSpeedChanged.emit(clockState.gameSpeed)
 
 #------ Time access controls ------#
-# note: This code is currently dormant and planned for use with something like an event system that forces an unchangeable pause state by locking the controls. 
+# note: This code is currently unused and planned for use with something like an event system that forces an unchangeable pause state by locking the controls, it should work but havent tested yet. 
 
 func lockSpeed(source: StringName) -> void:
 	if _speedLockSources.has(source):
@@ -112,3 +130,9 @@ func unlockSpeed(source: StringName) -> void:
 	_speedLockSources.erase(source)
 	if _speedLockSources.is_empty():
 		speedLockChanged.emit(false)
+
+#------------------ Generation API ------------------#
+
+func generateArbitraryFamilies(famCount: int) -> void:
+	for i in range(famCount):
+		classFactory.spawnFamily()

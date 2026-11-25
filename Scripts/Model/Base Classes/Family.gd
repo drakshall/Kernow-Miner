@@ -11,3 +11,6 @@ var economicHeadId: int = -1
 var legalHeadId: int = -1
 var familyLastName: String
 var spawnSeed: int
+var hungerRate: int
+
+var peon: Peon

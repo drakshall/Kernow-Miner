@@ -1,6 +1,12 @@
 \contentsline {part}{\numberline {I}Research}{3}{}%
 \contentsline {chapter}{\nonumberline Problem Brief}{4}{}%
 \contentsline {chapter}{\nonumberline Literature Review}{5}{}%
+\contentsline {section}{\nonumberline Historical}{5}{}%
+\contentsline {subsection}{\nonumberline Currently Reading}{5}{}%
+\contentsline {subsection}{\nonumberline To Be Read}{5}{}%
+\contentsline {section}{\nonumberline Technical}{5}{}%
+\contentsline {subsection}{\nonumberline Currently Reading}{5}{}%
+\contentsline {subsection}{\nonumberline To Be Read}{5}{}%
 \contentsline {part}{\numberline {II}Project Management}{6}{}%
 \contentsline {chapter}{\nonumberline Methodology}{7}{}%
 \contentsline {chapter}{\nonumberline Development Process}{8}{}%

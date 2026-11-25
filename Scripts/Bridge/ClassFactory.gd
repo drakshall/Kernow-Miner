@@ -1,12 +1,12 @@
-class_name InitFactory
+class_name ClassFactory
 extends Resource
-# factory class that establishes the starting conditions of the simulation
+# factory class for atomic class construction
 
 # ------------------------ Initialisation ---------------------- #
 
 var peonRegistry: PeonRegistry
 var familyRegistry: FamilyRegistry
-var _rng: RandomNumberGenerator
+var masterRng: RandomNumberGenerator
 
 const lASTnAMES := [
 	"Pengelly", "Dyer", "Angwin", "Jekyll", "Jenkins", "Kelly", "Beaglehole", "Tregona", "Nance", "Chynoweth", "Penrose", "Penhaligon", "Pascoe", "Woon", "Kernick", "Grose", "Boson", "Boscawen", "Hocking", "Snell", "Rodda", "Kempthorne", "Chenoweth", "Pendarves", "Penberthy", "Penna", "Trembath", "Trethowan", "Tregenna", "Trefethen", "Treblilcock", "Roscoe", "Walker", "Watson", "Evans", "Trevorrow", "Trewhella", "Vingoe"
@@ -44,10 +44,8 @@ func _pickEnumWith(rng: RandomNumberGenerator, enumDict: Dictionary) -> int:
 # ------------------------------ Creation Methods ------------------------------- #
 
 func _spawnPeon(params: Dictionary = {}) -> Peon:
-	
 	var p := Peon.new()
 	peonRegistry.register(p)
-	
 	var derivedSeed: int
 	derivedSeed = hash(str(params.get("familySeed")) + str(params.get("slot")))
 	var localRng := RandomNumberGenerator.new()
@@ -86,11 +84,9 @@ func _spawnPeon(params: Dictionary = {}) -> Peon:
 	
 	return p
 
-func _spawnFamily(params: Dictionary = {}) -> Family:
-	
+func spawnFamily(params: Dictionary = {}) -> Family:
 	var f := Family.new()
 	familyRegistry.register(f)
-	
 	var familySeed := _rng.randi()
 	var localRng := RandomNumberGenerator.new()
 	localRng.seed = familySeed

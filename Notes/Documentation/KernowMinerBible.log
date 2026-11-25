@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.11.3)  3 NOV 2026 15:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.11.3)  24 NOV 2026 10:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -6,6 +6,10 @@ entering extended mode
 (KernowMinerBible.tex
 LaTeX2e <2026-06-01>
 L3 programming layer <2026-09-09>
+
+(C:\Users\Max\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrreport.cls
+Document Class: scrreport 2026/02/02 v3.49.2 KOMA-Script document class (report
+)
 (C:\Users\Max\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrreprt.cls
 Document Class: scrreprt 2026/02/02 v3.49.2 KOMA-Script document class (report)
 
@@ -142,7 +146,7 @@ Package tocbasic Info: omitting babel extension for `lot'
 \c@table=\count285
 Class scrreprt Info: Redefining `\numberline' on input line 7409.
 \bibindent=\dimen150
-) (C:\Users\Max\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption.sty
+)) (C:\Users\Max\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption.sty
 Package: caption 2023/08/05 v3.6o Customizing captions (AR)
 
 Package tocbasic Info: Loading of class-dependent code for package caption3
@@ -359,13 +363,13 @@ L3 programming layer <2026-09-09>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 7010 strings out of 467392
- 149177 string characters out of 5406611
- 694640 words of memory out of 5000000
- 36357 multiletter control sequences out of 15000+600000
+ 7032 strings out of 467392
+ 149826 string characters out of 5406611
+ 694883 words of memory out of 5000000
+ 36376 multiletter control sequences out of 15000+600000
  635695 words of font info for 62 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 108i,7n,107p,11253b,339s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 122i,7n,121p,11263b,339s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\Max\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm12
 00.pk><C:/Users/Max/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/c
 m/cmbx12.pfb><C:/Users/Max/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
@@ -373,7 +377,7 @@ fonts/cm/cmr12.pfb><C:/Users/Max/AppData/Local/Programs/MiKTeX/fonts/type1/publ
 ic/amsfonts/cm/cmr17.pfb><C:/Users/Max/AppData/Local/Programs/MiKTeX/fonts/type
 1/public/amsfonts/cm/cmssbx10.pfb><C:/Users/Max/AppData/Local/Programs/MiKTeX/f
 onts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on KernowMinerBible.pdf (21 pages, 250159 bytes).
+Output written on KernowMinerBible.pdf (21 pages, 250176 bytes).
 PDF statistics:
  101 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
